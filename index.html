@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Main</title>
+        <style>
+            body {
+                background-image: url("images/web_background.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            td#info {
+                background-color: white;
+            }
+            td#input {
+                background-color: white;
+            }
+            p#graph {
+                text-align: center;
+            }
+            p.info {
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <table width="100%">
+            <tr>
+                <td id="info">
+                    <p class="info">Муртузалиев Мурад Батирханович</p>
+                    <p class="info">P3218</p>
+                    <p class="info">Вариант 2817</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="graph"><img src="images/web_coordinates.png" alt="coordinates"></p>
+                </td>
+            </tr>
+            <tr>
+                <td id="input">
+                    <center>
+                        <p id="input-x">X:
+                            <input type="checkbox" id="-2" value="-2">
+                            <label for="-2">-2</label>
+                            <input type="checkbox" id="-1.5" value="-1.5">
+                            <label for="-1.5">-1.5</label>
+                            <input type="checkbox" id="-1" value="-1">
+                            <label for="-1">-1</label>
+                            <input type="checkbox" id="-0.5" value="-0.5">
+                            <label for="-0.5">-0.5</label>
+                            <input type="checkbox" id="0" value="0">
+                            <label for="0">0</label>
+                            <input type="checkbox" id="0.5" value="0.5">
+                            <label for="0.5">0.5</label>
+                            <input type="checkbox" id="1" value="1">
+                            <label for="1">1</label>
+                            <input type="checkbox" id="1.5" value="1.5">
+                            <label for="1.5">1.5</label>
+                            <input type="checkbox" id="2" value="2">
+                            <label for="2">2</label>
+                        </p>
+                        <p id="input-y">Y:
+                            <input type="text">
+                        </p>
+                        <p id="input-r">R:
+                            <input type="text">
+                        </p>
+                        <input type="submit" id="send" value="Отправить">
+                    </center>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
