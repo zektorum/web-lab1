@@ -16,6 +16,6 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
-        source: ${{ vars.SOURCE }}
-        target: ${{ vars.TARGET }}
+        source: ${{ secrets.SOURCE }}
+        target: ${{ secrets.TARGET }}
       
