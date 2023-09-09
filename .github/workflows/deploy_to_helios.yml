@@ -19,3 +19,4 @@ jobs:
         key: ${{ secrets.KEY }}
         source: ${{ secrets.SOURCE }}
         target: ${{ secrets.TARGET }}
+        rm: true
