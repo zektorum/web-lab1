@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Main</title>
+        <script src="js/validation.js"></script>
         <style>
             body {
                 background-image: url("images/web_background.jpg");
@@ -42,32 +43,32 @@
                 <td id="input">
                     <center>
                         <p id="input-x">X:
-                            <input type="checkbox" id="-2" value="-2">
+                            <input type="checkbox" class="" id="-2" value="-2" onclick="checkCurrentCheckbox('-2')">
                             <label for="-2">-2</label>
-                            <input type="checkbox" id="-1.5" value="-1.5">
+                            <input type="checkbox" id="-1.5" value="-1.5" onclick="checkCurrentCheckbox('-1.5')">
                             <label for="-1.5">-1.5</label>
-                            <input type="checkbox" id="-1" value="-1">
+                            <input type="checkbox" id="-1" value="-1" onclick="checkCurrentCheckbox('-1')">
                             <label for="-1">-1</label>
-                            <input type="checkbox" id="-0.5" value="-0.5">
+                            <input type="checkbox" id="-0.5" value="-0.5" onclick="checkCurrentCheckbox('-0.5')">
                             <label for="-0.5">-0.5</label>
-                            <input type="checkbox" id="0" value="0">
+                            <input type="checkbox" id="0" value="0" onclick="checkCurrentCheckbox('0')">
                             <label for="0">0</label>
-                            <input type="checkbox" id="0.5" value="0.5">
+                            <input type="checkbox" id="0.5" value="0.5" onclick="checkCurrentCheckbox('0.5')">
                             <label for="0.5">0.5</label>
-                            <input type="checkbox" id="1" value="1">
+                            <input type="checkbox" id="1" value="1" onclick="checkCurrentCheckbox('1')">
                             <label for="1">1</label>
-                            <input type="checkbox" id="1.5" value="1.5">
+                            <input type="checkbox" id="1.5" value="1.5" onclick="checkCurrentCheckbox('1.5')">
                             <label for="1.5">1.5</label>
-                            <input type="checkbox" id="2" value="2">
+                            <input type="checkbox" id="2" value="2" onclick="checkCurrentCheckbox('2')">
                             <label for="2">2</label>
                         </p>
                         <p id="input-y">Y:
-                            <input type="text">
+                            <input type="text" placeholder="-5 ... 5">
                         </p>
                         <p id="input-r">R:
-                            <input type="text">
+                            <input type="text" placeholder="2 ... 5">
                         </p>
-                        <input type="submit" id="send" value="Отправить">
+                        <input type="submit" id="send" value="Отправить"> <!-- TODO: добавить input с типом clear -->
                     </center>
                 </td>
             </tr>
