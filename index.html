@@ -2,73 +2,93 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8">
-        <title>Main</title>
-        <style>
-            body {
-                background-image: url("images/web_background.jpg");
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-            td#info {
-                background-color: white;
-            }
-            td#input {
-                background-color: white;
-            }
-            p#graph {
-                text-align: center;
-            }
-            p.info {
-                margin-bottom: 0;
-                margin-top: 0;
-            }
-        </style>
+        <title>Лабораторная работа #1</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <table width="100%">
-            <tr>
-                <td id="info">
-                    <p class="info">Муртузалиев Мурад Батирханович</p>
-                    <p class="info">P3218</p>
-                    <p class="info">Вариант 2817</p>
-                </td>
+        <table>
+            <tr class="info">
+                <th id="name">Муртузалиев Мурад Батирханович</th>
+                <th id="group">P3218</th>
+                <th id="variant">Вариант 2818</th>
             </tr>
             <tr>
-                <td>
-                    <p id="graph"><img src="images/web_coordinates.png" alt="coordinates"></p>
+                <td id="graph">
+                    <img id="coordinates" src="images/coordinates.png" alt="coordinates">
+                </td>
+                <td id="table" colspan="2">
+                    <table id="results">
+                        <tr>
+                            <th>Дата</th>
+                            <th>Время выполнения</th>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>R</th>
+                            <th>Результат</th>
+                        </tr>
+                        <!--<tr>
+                            <td class="result">11.10.2023</td>
+                            <td class="result">0.00001</td>
+                            <td class="result">1</td>
+                            <td class="result">1</td>
+                            <td class="result">1</td>
+                            <td class="result">1</td>
+                        </tr>-->
+                    </table>
                 </td>
             </tr>
             <tr>
                 <td id="input">
-                    <center>
-                        <p id="input-x">X:
-                            <input type="checkbox" id="-2" value="-2">
-                            <label for="-2">-2</label>
-                            <input type="checkbox" id="-1.5" value="-1.5">
-                            <label for="-1.5">-1.5</label>
-                            <input type="checkbox" id="-1" value="-1">
-                            <label for="-1">-1</label>
-                            <input type="checkbox" id="-0.5" value="-0.5">
-                            <label for="-0.5">-0.5</label>
-                            <input type="checkbox" id="0" value="0">
-                            <label for="0">0</label>
-                            <input type="checkbox" id="0.5" value="0.5">
-                            <label for="0.5">0.5</label>
-                            <input type="checkbox" id="1" value="1">
-                            <label for="1">1</label>
-                            <input type="checkbox" id="1.5" value="1.5">
-                            <label for="1.5">1.5</label>
-                            <input type="checkbox" id="2" value="2">
-                            <label for="2">2</label>
-                        </p>
-                        <p id="input-y">Y:
-                            <input type="text">
-                        </p>
-                        <p id="input-r">R:
-                            <input type="text">
-                        </p>
-                        <input type="submit" id="send" value="Отправить">
-                    </center>
+                    <div class="input">
+                        <label>X:</label>
+                        <input type="checkbox" id="-4" value="-4">
+                        <label for="-4">-4</label>
+                        <input type="checkbox" id="-3" value="-3">
+                        <label for="-3">-3</label>
+                        <input type="checkbox" id="-2" value="-2">
+                        <label for="-2">-2</label>
+                        <input type="checkbox" id="-1" value="-1">
+                        <label for="-1">-1</label>
+                        <input type="checkbox" id="0" value="0">
+                        <label for="0">0</label>
+                        <input type="checkbox" id="1" value="1">
+                        <label for="1">1</label>
+                        <input type="checkbox" id="2" value="2">
+                        <label for="2">2</label>
+                        <input type="checkbox" id="3" value="3">
+                        <label for="3">3</label>
+                        <input type="checkbox" id="4" value="4">
+                        <label for="4">4</label>
+
+                        <br>
+                        <br>
+
+                        <label for="y">Y:</label>
+                        <input id="y" type="text" placeholder="-5 ... 3">
+
+                        <br>
+                        <br>
+
+                        <label for="r">R:</label>
+                        <select id="r">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+	                    </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="error">
+                    <p>Error</p>
+                </td>
+            </tr>
+            <tr>
+                <td id="submit">
+                    <input type="submit" id="send" value="Отправить">
                 </td>
             </tr>
         </table>
