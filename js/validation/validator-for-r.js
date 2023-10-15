@@ -8,7 +8,7 @@ export class ValidatorForR extends Validator {
         const isValid = r.value >= r.type.minValue &&
             r.value <= r.type.maxValue && this.isInRange();
         return [
-            "r",
+            "R",
             isValid
         ];
 

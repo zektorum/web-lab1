@@ -13,7 +13,7 @@ export class ValidatorForY extends Validator {
                 precision
             )
         return [
-            "y",
+            "Y",
             isValid
         ]
 

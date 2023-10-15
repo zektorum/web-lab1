@@ -12,7 +12,7 @@ export class ValidatorForX extends Validator {
                 precision
             )
         return [
-            "x",
+            "X",
             isValid
         ]
 
