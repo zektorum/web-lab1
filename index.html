@@ -5,7 +5,8 @@
         <title>Лабораторная работа #1</title>
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script src="js/validation.js"></script>
+        <script type="module" src="js/entrypoint.js"></script>
+        <script type="text/javascript" src="js/validation/current-checkbox-validator.js"></script>
     </head>
     <body>
         <table>
@@ -42,54 +43,58 @@
             <tr>
                 <td id="input">
                     <div class="input">
-                        <label>X:</label>
-                        <input type="checkbox" id="-4" value="-4" onclick="checkCurrentCheckbox(-4)">
-                        <label for="-4">-4</label>
-                        <input type="checkbox" id="-3" value="-3" onclick="checkCurrentCheckbox(-3)">
-                        <label for="-3">-3</label>
-                        <input type="checkbox" id="-2" value="-2" onclick="checkCurrentCheckbox(-2)">
-                        <label for="-2">-2</label>
-                        <input type="checkbox" id="-1" value="-1" onclick="checkCurrentCheckbox(-1)">
-                        <label for="-1">-1</label>
-                        <input type="checkbox" id="0" value="0" onclick="checkCurrentCheckbox(0)">
-                        <label for="0">0</label>
-                        <input type="checkbox" id="1" value="1" onclick="checkCurrentCheckbox(1)">
-                        <label for="1">1</label>
-                        <input type="checkbox" id="2" value="2" onclick="checkCurrentCheckbox(2)">
-                        <label for="2">2</label>
-                        <input type="checkbox" id="3" value="3" onclick="checkCurrentCheckbox(3)">
-                        <label for="3">3</label>
-                        <input type="checkbox" id="4" value="4" onclick="checkCurrentCheckbox(4)">
-                        <label for="4">4</label>
+                        <form action="validator.php" id="data" method="get" onsubmit="return validateAllData()">
+                            <label>X:</label>
+                            <input type="checkbox" id="-4" value="-4" onclick="new CurrentCheckboxValidator().selectCurrentCheckbox(-4)">
+                            <label for="-4">-4</label>
+                            <input type="checkbox" id="-3" value="-3" onclick="new CurrentCheckboxValidator().selectCurrentCheckbox(-3)">
+                            <label for="-3">-3</label>
+                            <input type="checkbox" id="-2" value="-2" onclick="new CurrentCheckboxValidator().selectCurrentCheckbox(-2)">
+                            <label for="-2">-2</label>
+                            <input type="checkbox" id="-1" value="-1" onclick="new CurrentCheckboxValidator().selectCurrentCheckbox(-1)">
+                            <label for="-1">-1</label>
+                            <input type="checkbox" id="0" value="0" onclick="new CurrentCheckboxValidator().selectCurrentCheckbox(0)">
+                            <label for="0">0</label>
+                            <input type="checkbox" id="1" value="1" onclick="new CurrentCheckboxValidator().selectCurrentCheckbox(1)">
+                            <label for="1">1</label>
+                            <input type="checkbox" id="2" value="2" onclick="new CurrentCheckboxValidator().selectCurrentCheckbox(2)">
+                            <label for="2">2</label>
+                            <input type="checkbox" id="3" value="3" onclick="new CurrentCheckboxValidator().selectCurrentCheckbox(3)">
+                            <label for="3">3</label>
+                            <input type="checkbox" id="4" value="4" onclick="new CurrentCheckboxValidator().selectCurrentCheckbox(4)">
+                            <label for="4">4</label>
 
-                        <br>
-                        <br>
+                            <br>
+                            <br>
 
-                        <label for="y">Y:</label>
-                        <input id="y" type="text" placeholder="-5 ... 3">
+                            <label for="y">Y:</label>
+                            <input id="y" type="text" placeholder="-5 ... 3">
 
-                        <br>
-                        <br>
+                            <br>
+                            <br>
 
-                        <label for="r">R:</label>
-                        <select id="r">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-	                    </select>
+                            <label for="r">R:</label>
+                            <select id="r">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </form>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td id="error">
-                    <p>Error</p>
+                    <div id="error-message">
+                        <p>Error</p>
+                    </div>
                 </td>
             </tr>
             <tr>
                 <td id="submit">
-                    <input type="submit" id="send" value="Отправить">
+                    <input type="submit" form="data" id="send" value="Отправить">
                 </td>
             </tr>
         </table>
