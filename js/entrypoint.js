@@ -18,7 +18,7 @@ const inputType = {
 
 function showError(fieldName) {
     document.getElementById("error-message").style.display = "block"
-    document.getElementById("error-message").textContent = "Input " + fieldName + " is invalid."
+    document.getElementById("error-message").textContent = "Поле '" + fieldName + "' содержит некорректные данные."
 }
 
 function validateAllData () {
@@ -27,10 +27,10 @@ function validateAllData () {
     const y = document.getElementById("y")
 
     if (x == null) {
-        showError("x")
+        showError("X")
         return false
     } else if (y.value == "") {
-        showError("y")
+        showError("Y")
         return false
     }
 
@@ -62,7 +62,7 @@ function validateAllData () {
         if (!isValid)
         {
 
-
+            showError(type)
             return false
 
         }
