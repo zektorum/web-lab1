@@ -24,8 +24,13 @@ function showError(fieldName) {
 function validateAllData () {
 
     const x = document.querySelector("input[type=checkbox]:checked")
+    const y = document.getElementById("y")
+
     if (x == null) {
         showError("x")
+        return false
+    } else if (y.value == "") {
+        showError("y")
         return false
     }
 
@@ -35,7 +40,7 @@ function validateAllData () {
         ),
         fieldY = new UserInput(
             inputType.y,
-            document.getElementById("y").value
+            y.value
         ),
         fieldR = new UserInput(
             inputType.r,
