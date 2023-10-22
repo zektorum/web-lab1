@@ -5,6 +5,7 @@ export class ValidatorForY extends Validator {
 
     validate () {
 
+        this.input.value = this.input.value.replace(",", ".")
         const isValid = this.isIntegerOrFloat(this.input.value) &&
             this.checkInputValue(
                 this.input.type.minValue,
@@ -13,7 +14,7 @@ export class ValidatorForY extends Validator {
                 precision
             )
         return [
-            "y",
+            "Y",
             isValid
         ]
 

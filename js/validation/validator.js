@@ -27,9 +27,15 @@ export class Validator {
 
     }
 
+    isInteger (value) {
+
+        return value.match(/^[\-]?\d$/g) != null
+
+    }
+
     isIntegerOrFloat (value) {
 
-        return value.match(/[+-]?[0-9]+([.,][0-9]+)*/g) != null;
+        return value.match(/[+-]?[0-9]+(\.[0-9]+)*/g) != null;
 
     }
 

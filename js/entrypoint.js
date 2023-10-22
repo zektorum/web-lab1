@@ -18,16 +18,23 @@ const inputType = {
 
 function showError(fieldName) {
     document.getElementById("error-message").style.display = "block"
-    document.getElementById("error-message").textContent = "Input " + fieldName + " is invalid."
+    document.getElementById("error-message").textContent = "Поле '" + fieldName + "' содержит некорректные данные."
 }
 
 function validateAllData () {
 
     const x = document.querySelector("input[type=checkbox]:checked")
+    const y = document.getElementById("y")
+
     if (x == null) {
-        showError("x")
+        showError("X")
+        return false
+    } else if (y.value == "") {
+        showError("Y")
         return false
     }
+
+    y.value = y.value.replaceAll(" ", "")
 
     const fieldX = new UserInput( //
             inputType.x,
@@ -35,7 +42,7 @@ function validateAllData () {
         ),
         fieldY = new UserInput(
             inputType.y,
-            document.getElementById("y").value
+            y.value
         ),
         fieldR = new UserInput(
             inputType.r,
@@ -57,7 +64,7 @@ function validateAllData () {
         if (!isValid)
         {
 
-
+            showError(type)
             return false
 
         }
