@@ -29,7 +29,7 @@ export class Validator {
 
     isInteger (value) {
 
-        return value.match(/^[\-]?\d$/g) != null
+        return value.match(/^-?\d$/g) != null
 
     }
 
