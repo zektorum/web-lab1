@@ -34,6 +34,8 @@ function validateAllData () {
         return false
     }
 
+    y.value = y.value.replaceAll(" ", "")
+
     const fieldX = new UserInput( //
             inputType.x,
             x.value
