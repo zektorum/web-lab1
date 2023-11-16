@@ -5,9 +5,7 @@ on:
 
 jobs:
   deploy:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Copy files via ssh
@@ -20,3 +18,14 @@ jobs:
         source: ${{ secrets.SOURCE }}
         target: ${{ secrets.TARGET }}
         rm: true
+
+  fix-url:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.KEY }}
+        script: sed -i "s/http:\/\/localhost:63342\/web-lab1\/index.php/https:\/\/se.ifmo.ru\/~s335096\/index.php/g" "{{ secrets.TARGET }}/validate.php"
