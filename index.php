@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -19,7 +20,7 @@
                 <td id="graph">
                     <img id="coordinates" src="images/coordinates.png" alt="coordinates">
                     <div class="input">
-                        <form action="php/validator.php" id="data" method="get" onsubmit="return validateAllData()">
+                        <form action="validate.php" id="data" method="get" onsubmit="return validateAllData()">
                             <label>X:</label>
                             <input type="checkbox" name="x" id="-4" value="-4" onclick="new CurrentCheckboxValidator().selectCurrentCheckbox(-4)">
                             <label for="-4">-4</label>
@@ -74,14 +75,15 @@
                             <th>R</th>
                             <th>Результат</th>
                         </tr>
-                        <!--<tr>
-                            <td class="result">11.10.2023</td>
-                            <td class="result">0.00001</td>
-                            <td class="result">1</td>
-                            <td class="result">1</td>
-                            <td class="result">1</td>
-                            <td class="result">1</td>
-                        </tr>-->
+                        <?php
+                        if (!isset($_SESSION["HISTORY"])) {
+                            $_SESSION["HISTORY"] = [];
+                        }
+                        $history = $_SESSION["HISTORY"];
+                        for ($i = 0; $i < count($history); $i++) {
+                            echo $history[$i];
+                        }
+                        ?>
                     </table>
                 </td>
             </tr>
