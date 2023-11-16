@@ -18,30 +18,6 @@
             <tr>
                 <td id="graph">
                     <img id="coordinates" src="images/coordinates.png" alt="coordinates">
-                </td>
-                <td id="table" colspan="2">
-                    <table id="results">
-                        <tr>
-                            <th>Дата</th>
-                            <th>Время выполнения</th>
-                            <th>X</th>
-                            <th>Y</th>
-                            <th>R</th>
-                            <th>Результат</th>
-                        </tr>
-                        <!--<tr>
-                            <td class="result">11.10.2023</td>
-                            <td class="result">0.00001</td>
-                            <td class="result">1</td>
-                            <td class="result">1</td>
-                            <td class="result">1</td>
-                            <td class="result">1</td>
-                        </tr>-->
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td id="input">
                     <div class="input">
                         <form action="php/validator.php" id="data" method="get" onsubmit="return validateAllData()">
                             <label>X:</label>
@@ -83,18 +59,30 @@
                             </select>
                         </form>
                     </div>
-                </td>
-            </tr>
-            <tr>
-                <td id="error">
                     <div id="error-message">
                         <p>Error</p>
                     </div>
-                </td>
-            </tr>
-            <tr>
-                <td id="submit">
                     <input type="submit" form="data" id="send" value="Отправить">
+                </td>
+                <td id="table" colspan="2">
+                    <table id="results">
+                        <tr>
+                            <th>Дата</th>
+                            <th>Время выполнения</th>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>R</th>
+                            <th>Результат</th>
+                        </tr>
+                        <!--<tr>
+                            <td class="result">11.10.2023</td>
+                            <td class="result">0.00001</td>
+                            <td class="result">1</td>
+                            <td class="result">1</td>
+                            <td class="result">1</td>
+                            <td class="result">1</td>
+                        </tr>-->
+                    </table>
                 </td>
             </tr>
         </table>
