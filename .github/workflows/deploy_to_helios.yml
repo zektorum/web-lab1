@@ -29,4 +29,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
-        script: sed -i 's/http:\/\/localhost:63342\/web-lab1\/index.php/https:\/\/se.ifmo.ru\/~s335096\/index.php/' ~/public_html/validate.php
+        script: sed -i '' 's/http:\/\/localhost:63342\/web-lab1\/index.php/https:\/\/se.ifmo.ru\/~s335096\/index.php/' ~/public_html/validate.php
