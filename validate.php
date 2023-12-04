@@ -18,7 +18,20 @@ $y = (float)$_GET["y"];
 
 // end of validation
 
-$result = 1;
+// check hit
+// check first quarter (square)
+$isInFirstQuarter = $x >= 0 && $y >= 0 && $x <= $r && $y <= $r;
+
+// check second quarter (triangle)
+$isInSecondQuarter = $x < 0 && $y >= 0 && $y < ($x + $r) / 2;
+
+// check third quarter (nothing)
+// check fourth quarter (a quarter of circle)
+$isInFourthQuarter = $x >= 0 && $y < 0 && $x * $x + $y * $y <= $r * $r;
+
+$result = $isInFirstQuarter || $isInSecondQuarter || $isInFourthQuarter;
+// end of check hit
+
 $duration = round((microtime(true) - $startTime) * 10 ** 3, 3);
 
 date_default_timezone_set("Europe/Moscow");
