@@ -1,11 +1,11 @@
 <?php
 
 class InputType {
-    private int $minValue;
-    private int $maxValue;
-    private int $delta;
+    private $minValue;
+    private $maxValue;
+    private $delta;
 
-    public function __construct(int $minValue, int $maxValue, int $delta) {
+    public function __construct($minValue, $maxValue, $delta) {
         $this->minValue = $minValue;
         $this->maxValue = $maxValue;
         $this->delta = $delta;
@@ -38,7 +38,7 @@ class InputTypeX extends InputType {
     }
 
     public function getDelta() {
-        return parent::getMaxValue();
+        return parent::getDelta();
     }
 }
 
