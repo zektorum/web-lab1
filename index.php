@@ -63,6 +63,16 @@
                     <div id="error-message">
                         <p>Error</p>
                     </div>
+                    <?php $error = <<< EOF
+<div id="error-message" style="display: block;">
+    <p>Введите корректные данные</p>
+</div>
+EOF;
+                    if (isset($_SESSION["hasError"]) && $_SESSION["hasError"] == "true") {
+                        echo $error;
+                        $_SESSION["hasError"] = "false";
+                    }
+?>
                     <input type="submit" form="data" id="send" value="Отправить">
                 </td>
                 <td id="table" colspan="2">
