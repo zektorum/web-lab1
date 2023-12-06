@@ -51,7 +51,7 @@ if (!isset($_GET["x"]) || !isset($_GET["y"]) || !isset($_GET["r"])) {
 
 $x = (float)$_GET["x"];
 $r = (float)$_GET["r"];
-$y = (float)$_GET["y"];
+$y = (float)str_replace(",", ".", $_GET["y"]);
 
 $isHit = isHit($x, $y, $r);
 
