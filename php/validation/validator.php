@@ -36,11 +36,11 @@ class Validator {
     }
 
     public function isInteger($value) {
-        return is_integer($value);
+        return !preg_match("/^-?\d$/", $value);
     }
 
     public function isIntegerOrFloat($value) {
-        return is_integer($value) || is_float($value);
+        return !preg_match("/^[+-]?[0-9]+(\.[0-9]+)*$/", $value);
     }
 
     public function equalOrGreaterThanStartValue($start, $current, $precision) {
