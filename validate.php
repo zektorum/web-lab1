@@ -3,9 +3,11 @@
 include_once "./php/input_type.php";
 include_once "./php/user_input.php";
 include_once "./php/validation/validator_for_x.php";
+include_once "./php/validation/validator_for_y.php";
 include_once "./php/validation/validator_for_r.php";
 
 use validation\ValidatorForX;
+use validation\ValidatorForY;
 use validation\ValidatorForR;
 
 function redirectToMainPage() {
@@ -55,6 +57,7 @@ $isHit = isHit($x, $y, $r);
 
 $validators = [
     new ValidatorForX(new UserInput(new InputTypeX(), $x)),
+    new ValidatorForY(new UserInput(new InputTypeY(), $y)),
     new ValidatorForR(new UserInput(new InputTypeR(), $r))
 ];
 $isValid = false;
