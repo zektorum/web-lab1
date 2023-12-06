@@ -3,6 +3,7 @@
 namespace validation;
 
 include_once __DIR__ . "/../user_input.php";
+include_once "const.php";
 
 use UserInput;
 
@@ -27,7 +28,7 @@ class Validator {
         }
         for ($valueFromRange = $current->getType()->getMinValue(); $valueFromRange <= $current->getType()->getMaxValue();
              $valueFromRange += $current->getType()->getDelta()) {
-            if ($current->getValue() - $valueFromRange) {
+            if (abs($current->getValue() - $valueFromRange) < precision) {
                 return true;
             }
         }
