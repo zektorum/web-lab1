@@ -1,10 +1,10 @@
 <?php
 
 class UserInput {
-    private InputType $type;
-    private string $value;
+    private $type;
+    private $value;
 
-    public function __construct(InputType $type, string $value) {
+    public function __construct($type, $value) {
         $this->type = $type;
         $this->value = $value;
     }

@@ -39,26 +39,28 @@ export class Validator {
 
     }
 
-    greaterThanStartValue (start, current) {
+    equalOrGreaterThanStartValue (start, current) {
 
         // Если разница между числами меньше precision, то числа равны
-        return !Math.abs(start - current) < precision && start < current;
+        const abs = Math.abs(start - current)
+        return abs >= precision && start <= current || abs < precision;
 
     }
 
-    lowerThanEndValue (end, current) {
+    equalOrLowerThanEndValue (end, current) {
 
-        return !Math.abs(end - current) < precision && end > current;
+        const abs = Math.abs(end - current)
+        return abs >= precision && end >= current || abs < precision;
 
     }
 
     checkInputValue (start, end, current, precision) {
 
-        const value = this.greaterThanStartValue(
+        const value = this.equalOrGreaterThanStartValue(
             start,
             current,
             precision
-        ) && this.lowerThanEndValue(
+        ) && this.equalOrLowerThanEndValue(
             end,
             current,
             precision
