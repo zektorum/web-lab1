@@ -57,7 +57,7 @@ class InputTypeY extends InputType {
     }
 
     public function getDelta() {
-        return parent::getMaxValue();
+        return parent::getDelta();
     }
 }
 
@@ -75,6 +75,6 @@ class InputTypeR extends InputType {
     }
 
     public function getDelta() {
-        return parent::getMaxValue();
+        return parent::getDelta();
     }
 }

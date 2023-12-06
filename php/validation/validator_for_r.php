@@ -5,7 +5,7 @@ namespace validation;
 include_once "const.php";
 include_once "validator.php";
 
-class ValidatorForX extends Validator {
+class ValidatorForR extends Validator {
     public function validate() {
         $isValid = $this->checkInputValue(
                 $this->getUserInput()->getType()->getMinValue(),
@@ -13,6 +13,6 @@ class ValidatorForX extends Validator {
                 $this->getUserInput()->getValue(),
                 precision
             ) && $this->isInRange();
-        return ["X", $isValid];
+        return ["R", $isValid];
     }
 }

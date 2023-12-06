@@ -1,10 +1,12 @@
 <?php
 
-include "./php/input_type.php";
-include "./php/user_input.php";
-include "./php/validation/validator_for_x.php";
+include_once "./php/input_type.php";
+include_once "./php/user_input.php";
+include_once "./php/validation/validator_for_x.php";
+include_once "./php/validation/validator_for_r.php";
 
 use validation\ValidatorForX;
+use validation\ValidatorForR;
 
 function redirectToMainPage() {
     header("Location: http://localhost:63342/web-lab1/index.php");
@@ -51,7 +53,10 @@ $y = (float)$_GET["y"];
 
 $isHit = isHit($x, $y, $r);
 
-$validators = [new ValidatorForX(new UserInput(new InputTypeX(), $x))];
+$validators = [
+    new ValidatorForX(new UserInput(new InputTypeX(), $x)),
+    new ValidatorForR(new UserInput(new InputTypeR(), $r))
+];
 $isValid = false;
 for ($i = 0; $i < count($validators); $i++) {
      $isValid = $validators[$i]->validate()[1];
