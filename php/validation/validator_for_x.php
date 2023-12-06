@@ -2,8 +2,8 @@
 
 namespace validation;
 
-include "const.php";
-include "validator.php";
+include_once "const.php";
+include_once "validator.php";
 
 class ValidatorForX extends Validator {
     public function validate() {
